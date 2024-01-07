@@ -1,34 +1,46 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Core.Player;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
 using UnityEngine.SceneManagement;
-using Utils.Data;
 using Zenject;
+using Object = UnityEngine.Object;
 
 namespace Core.Level
 {
-	public class LevelManager : MonoBehaviour
+	public class LevelManager : ILevelManager
 	{
-		[SerializeField] private List<Level> levels = new();
-
-		[Inject] private DiContainer _diContainer;
+		public event Action loaded;
+		public event Action onDestroyLevel;
 		
-		private void Awake()
-		{
-			var data = DataSave.Load<LevelInfo>();
-			
-			LoadLevel(data.Level - 1);
-		}
+		[Inject] 
+		private DiContainer _diContainer;
+		
+		private Level currentLevel;
 
-		public void LoadLevel(int index)
+		public async UniTask LoadLevelAsync(Level level, bool isTest)
 		{
-			var newLevel = _diContainer.InstantiatePrefabForComponent<Level>(levels[index]);
+			if(isTest)
+			{
+				await UniTask.WaitForFixedUpdate();
+				
+				loaded?.Invoke();
+				return;
+			}
 			
-			newLevel.Load();
+			var scene = SceneManager.LoadSceneAsync("TestLevel");
+
+			await UniTask.WaitWhile(() => !scene.isDone);
+
+			currentLevel = _diContainer.InstantiatePrefabForComponent<Level>(level);
+			currentLevel.Load();
+
+			loaded?.Invoke();
 		}
-	}   
+		
+		public void DestroyLevel()
+		{
+			onDestroyLevel?.Invoke();
+			
+			Object.Destroy(currentLevel.gameObject);
+		}
+	}
 }

@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Utils;
 
 namespace UI.GUI
@@ -13,11 +9,11 @@ namespace UI.GUI
 
 		protected DisposableList DisposableList;
 
-		public override void Initialized(ScreenViewModel model)
+		public override void Initialize(ScreenViewModel model)
 		{
 			ViewModel = (TViewModel)model;
 			
-			base.Initialized(model);
+			base.Initialize(model);
 		}
 
 		public override void Hide()

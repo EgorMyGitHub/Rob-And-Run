@@ -1,14 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 namespace Core.Player
 {
-	public class Player : MonoBehaviour, IPlayer
+	public class PlayerBehaviour : MonoBehaviour, IPlayerBehaviour
 	{
-		[SerializeField] private float speed;
+		[SerializeField] 
+		private float speed;
     
 		[SerializeField] [HideInInspector] 
 		private Rigidbody rigidbody;
@@ -36,7 +34,7 @@ namespace Core.Player
 			new(Input.GetAxis("Horizontal"),
 				Input.GetAxis("Vertical"));
 		
-		public class Factory : PlaceholderFactory<Player>
+		public class Factory : PlaceholderFactory<PlayerBehaviour>
 		{ }
 	}   
 }

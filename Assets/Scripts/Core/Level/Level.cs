@@ -1,4 +1,4 @@
-﻿using Core.Player;
+﻿using Core.Police;
 using UnityEngine;
 using Zenject;
 
@@ -6,11 +6,17 @@ namespace Core.Level
 {
 	public class Level : MonoBehaviour
 	{
-		[Inject] private IPlayerManager _playerManager;
+		[SerializeField] private Point[] spawnPoints;
+		
+		[Inject]
+		private IPoliceManager _policeManager;
 		
 		public void Load()
 		{
-			_playerManager.SpawnPlayer();
+			foreach (var item in spawnPoints)
+			{
+				_policeManager.SpawnPolice(item);
+			}
 		}
 	}
 }

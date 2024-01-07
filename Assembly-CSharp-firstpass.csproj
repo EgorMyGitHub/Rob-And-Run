@@ -47,13 +47,13 @@
      <Folder Include="Assets\Plugins\UniRx" />
      <Folder Include="Assets\Plugins\UniTask" />
      <Reference Include="UnityEngine">
-     <HintPath>G:\Unity\2022.3.4f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
+     <HintPath>F:\Unity\Installition\2022.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.CoreModule">
-     <HintPath>G:\Unity\2022.3.4f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
+     <HintPath>F:\Unity\Installition\2022.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.CoreModule.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor">
-     <HintPath>G:\Unity\2022.3.4f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
+     <HintPath>F:\Unity\Installition\2022.3.15f1\Editor\Data\Managed\UnityEngine\UnityEditor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

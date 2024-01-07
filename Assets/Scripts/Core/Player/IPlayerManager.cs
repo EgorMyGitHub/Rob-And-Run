@@ -1,10 +1,12 @@
-﻿namespace Core.Player
+﻿using UniRx;
+using Zenject;
+
+namespace Core.Player
 {
 	public interface IPlayerManager
 	{
-		IPlayer Player { get; }
+		IReadOnlyReactiveProperty<IPlayerBehaviour> Player{ get; }
 		
-		void SpawnPlayer();
 		void DestroyPlayer();
 	}
 }

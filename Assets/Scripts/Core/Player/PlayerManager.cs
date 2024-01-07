@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using Core.Level;
 using JetBrains.Annotations;
+using UniRx;
 using UnityEngine;
 using Zenject;
 
@@ -8,19 +8,32 @@ namespace Core.Player
 {
 	public class PlayerManager : IPlayerManager
 	{
-		[Inject] private Player.Factory _factory;
+		[Inject]
+		private PlayerBehaviour.Factory _factory;
 		
-		[CanBeNull] public IPlayer Player { get; private set; }
+		[Inject]
+		private ILevelManager _levelManager;
+
+		private readonly ReactiveProperty<IPlayerBehaviour> _player = new();
 		
+		public IReadOnlyReactiveProperty<IPlayerBehaviour> Player => _player;
+
 		public void SpawnPlayer()
 		{
-			Player = _factory.Create();
+			_player.Value = _factory.Create();
 		}
 
 		public void DestroyPlayer()
 		{
-			Object.Destroy(Player.GameObject);
-			Player = null;
+			Object.Destroy(_player.Value.GameObject);
+			_player.Value = null;
+		}
+
+		[Inject]
+		private void Subscribe()
+		{
+			_levelManager.loaded += SpawnPlayer;
+			_levelManager.onDestroyLevel += DestroyPlayer;
 		}
 	}
 }

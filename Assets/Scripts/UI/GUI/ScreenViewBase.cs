@@ -4,7 +4,7 @@ namespace UI.GUI
 {
 	public abstract class ScreenViewBase : MonoBehaviour
 	{
-		public virtual void Initialized(ScreenViewModel model)
+		public virtual void Initialize(ScreenViewModel model)
 		{
 			Show();
 		}

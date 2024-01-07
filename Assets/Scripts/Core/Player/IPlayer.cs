@@ -2,7 +2,7 @@
 
 namespace Core.Player
 {
-	public interface IPlayer
+	public interface IPlayerBehaviour
 	{
 		GameObject GameObject { get; }
 	}
