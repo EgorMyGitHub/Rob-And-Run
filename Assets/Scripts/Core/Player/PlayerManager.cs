@@ -1,5 +1,4 @@
 using Core.Level;
-using JetBrains.Annotations;
 using UniRx;
 using UnityEngine;
 using Zenject;
@@ -32,8 +31,8 @@ namespace Core.Player
 		[Inject]
 		private void Subscribe()
 		{
-			_levelManager.loaded += SpawnPlayer;
-			_levelManager.onDestroyLevel += DestroyPlayer;
+			_levelManager.Loaded += SpawnPlayer;
+			_levelManager.OnDestroyLevel += DestroyPlayer;
 		}
 	}
 }

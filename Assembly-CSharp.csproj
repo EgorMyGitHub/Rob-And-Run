@@ -45,6 +45,8 @@
     <Analyzer Include="F:\Unity\Installition\2022.3.15f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Core\Item\ItemConfig.cs" />
+     <Compile Include="Assets\Scripts\Core\Point\QueuePoint.cs" />
      <Compile Include="Assets\Scripts\Core\TestLoad.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Core\Level\ILevelManager.cs" />
@@ -53,17 +55,21 @@
      <Compile Include="Assets\Scripts\Installers\WorldInstaller.cs" />
      <Compile Include="Assets\Scripts\UI\GUI\ScreenView.cs" />
      <Compile Include="Assets\Scripts\UI\GUI\ScreenViewBase.cs" />
+     <Compile Include="Assets\Scripts\Core\Item\IItemManager.cs" />
+     <Compile Include="Assets\Scripts\Core\Point\Point.cs" />
      <Compile Include="Assets\Scripts\Core\Player\IPlayerManager.cs" />
      <Compile Include="Assets\Scripts\Core\Police\IPoliceManager.cs" />
      <Compile Include="Assets\Scripts\Core\Level\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Core\Item\ItemManager.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\Core\Player\Player.cs" />
+     <Compile Include="Assets\Scripts\RendererViewZone.cs" />
      <Compile Include="Assets\Scripts\Core\Police\PoliceManager.cs" />
      <Compile Include="Assets\Scripts\Core\Police\PoliceBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\Player\IPlayer.cs" />
-     <Compile Include="Assets\Scripts\Core\Point.cs" />
-     <Compile Include="Assets\Scripts\Installers\FactoryInstaller.cs" />
+     <Compile Include="Assets\Scripts\Core\Player\PlayerBehaviour.cs" />
+     <Compile Include="Assets\Scripts\Core\Point\BasePoint.cs" />
      <Compile Include="Assets\Scripts\Utils\DisposableList.cs" />
+     <Compile Include="Assets\Scripts\Core\Item\ItemBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\Level\Level.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Scripts\Installers" />
@@ -80,6 +86,7 @@
      <Folder Include="Assets\Scripts\Core\Level" />
      <Folder Include="Assets\Scripts\Core\Camera" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\Scripts\Core\Item" />
      <Folder Include="Assets\Material" />
      <Reference Include="UnityEngine">
      <HintPath>F:\Unity\Installition\2022.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
@@ -729,6 +736,9 @@
      <Reference Include="Unity.EditorCoroutines.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
@@ -756,11 +766,11 @@
      <Reference Include="UnityEngine.UI">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Flow.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -780,6 +790,9 @@
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Updater">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
@@ -789,8 +802,14 @@
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>

@@ -5,8 +5,8 @@ namespace Core.Level
 {
     public interface ILevelManager
     {
-        event Action loaded;
-        event Action onDestroyLevel;
+        event Action Loaded;
+        event Action OnDestroyLevel;
         
         UniTask LoadLevelAsync(Level level, bool isTest);
         void DestroyLevel();

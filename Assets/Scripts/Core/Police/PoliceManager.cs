@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Core.Level;
+using Core.Point;
 using UnityEngine;
 using Zenject;
 
@@ -15,14 +16,16 @@ namespace Core.Police
         
         private List<PoliceBehaviour> _spawnedPolice = new();
         
-        public void SpawnPolice(Point point)
+        public void SpawnPolice(BasePoint point)
         {
             var newPolice = _policePool.Spawn();
+            newPolice.InitializePoints(new QueuePoint(point));
             
-            var newPoliceTransform = newPolice.transform;
+            var policeTransform = newPolice.transform;
+            var pointTransform = point.transform;
             
-            newPoliceTransform.position = point.transform.position;
-            newPoliceTransform.rotation = point.transform.rotation;
+            policeTransform.position = pointTransform.position;
+            policeTransform.rotation = pointTransform.rotation;
             
             _spawnedPolice.Add(newPolice);
         }
@@ -33,7 +36,7 @@ namespace Core.Police
         [Inject]
         private void Subscribe()
         {
-            _levelManager.onDestroyLevel += DestroyAllPolice;
+            _levelManager.OnDestroyLevel += DestroyAllPolice;
         }
     }
 }

@@ -1,8 +1,5 @@
-using System;
 using Core.Player;
-using UniRx;
 using UnityEngine;
-using Utils;
 using Zenject;
 
 namespace Core.Camera

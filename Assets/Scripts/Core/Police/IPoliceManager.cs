@@ -1,9 +1,9 @@
-﻿using UnityEngine;
+﻿using Core.Point;
 
 namespace Core.Police
 {
     public interface IPoliceManager
     {
-        void SpawnPolice(Point point);
+        void SpawnPolice(BasePoint point);
     }
 }

@@ -8,13 +8,13 @@ namespace Core.Level
 {
 	public class LevelManager : ILevelManager
 	{
-		public event Action loaded;
-		public event Action onDestroyLevel;
+		public event Action Loaded;
+		public event Action OnDestroyLevel;
 		
 		[Inject] 
 		private DiContainer _diContainer;
 		
-		private Level currentLevel;
+		private Level _currentLevel;
 
 		public async UniTask LoadLevelAsync(Level level, bool isTest)
 		{
@@ -22,7 +22,7 @@ namespace Core.Level
 			{
 				await UniTask.WaitForFixedUpdate();
 				
-				loaded?.Invoke();
+				Loaded?.Invoke();
 				return;
 			}
 			
@@ -30,17 +30,17 @@ namespace Core.Level
 
 			await UniTask.WaitWhile(() => !scene.isDone);
 
-			currentLevel = _diContainer.InstantiatePrefabForComponent<Level>(level);
-			currentLevel.Load();
+			_currentLevel = _diContainer.InstantiatePrefabForComponent<Level>(level);
+			_currentLevel.Load();
 
-			loaded?.Invoke();
+			Loaded?.Invoke();
 		}
 		
 		public void DestroyLevel()
 		{
-			onDestroyLevel?.Invoke();
+			OnDestroyLevel?.Invoke();
 			
-			Object.Destroy(currentLevel.gameObject);
+			Object.Destroy(_currentLevel.gameObject);
 		}
 	}
 }

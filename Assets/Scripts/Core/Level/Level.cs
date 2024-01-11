@@ -1,4 +1,5 @@
-﻿using Core.Police;
+﻿using Core.Point;
+using Core.Police;
 using UnityEngine;
 using Zenject;
 
@@ -6,7 +7,8 @@ namespace Core.Level
 {
 	public class Level : MonoBehaviour
 	{
-		[SerializeField] private Point[] spawnPoints;
+		[SerializeField]
+		private BasePoint[] spawnPoints;
 		
 		[Inject]
 		private IPoliceManager _policeManager;

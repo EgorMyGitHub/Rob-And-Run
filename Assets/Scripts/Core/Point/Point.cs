@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core
+namespace Core.Point
 {
     public class Point : MonoBehaviour
     {

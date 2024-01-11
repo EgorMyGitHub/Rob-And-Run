@@ -14,7 +14,7 @@ namespace Core
 
         private void Start()
         {
-            _manager.LoadLevelAsync(test, true);
+            _manager.LoadLevelAsync(test, false);
         }
     }
 }
