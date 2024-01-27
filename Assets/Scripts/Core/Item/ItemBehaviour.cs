@@ -4,6 +4,7 @@ using Zenject;
 
 namespace Core.Item
 {
+    [RequireComponent(typeof(Rigidbody))]
     public class ItemBehaviour : MonoBehaviour
     {
         [Inject]

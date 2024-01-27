@@ -152,8 +152,8 @@
      <Compile Include="Assets\Plugins\UniRx\Scripts\Subjects\ReplaySubject.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableTriggerExtensions.Component.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.Joins.cs" />
-     <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Triggers\ObservableEventTrigger.cs" />
+     <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.ErrorHandling.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\UnityEngineBridge\Operators\ThrottleFirstFrame.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\Aggregate.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Notifiers\ScheduledNotifier.cs" />
@@ -223,8 +223,8 @@
      <Compile Include="Assets\Plugins\UniRx\Scripts\Observable.Conversions.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\SelectWhere.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\AsObservable.cs" />
-     <Compile Include="Assets\Plugins\UniRx\Scripts\Disposables\BooleanDisposable.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\Timestamp.cs" />
+     <Compile Include="Assets\Plugins\UniRx\Scripts\Disposables\BooleanDisposable.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\ThrottleFirst.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\Where.cs" />
      <Compile Include="Assets\Plugins\UniRx\Scripts\Operators\DefaultIfEmpty.cs" />

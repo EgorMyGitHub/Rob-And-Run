@@ -72,8 +72,8 @@
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\BindSignal\BindSignalToBinder.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Util\ExecutionOrderInstaller.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Installers\PlayerInstaller.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\PoolableManager.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceIdBinder\FactoryToChoiceIdBinder3.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\PoolableManager.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\ListPool.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Runtime\InitializableManager.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\MonoKernel.cs" />
@@ -151,9 +151,9 @@
      <Compile Include="Assets\Plugins\Zenject\Source\Factories\PlaceholderFactoryBase.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderMultiple.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder10.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\StaticMemoryPoolRegistry.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\SignalTickPriorityCopyBinder.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Runtime\AnimatorInterfaces\AnimatorIkHandlerManager.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\StaticMemoryPoolRegistry.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\SignalDeclaration.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder4.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Main\SignalBus.cs" />
@@ -234,9 +234,9 @@
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder10.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\ProjectKernel.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceBinder\FactoryToChoiceBinder4.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Providers\ComponentProviders\AddToGameObjectComponentProviders\AddToNewGameObjectComponentProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Runtime\AnimatorInterfaces\IAnimatorIkHandler.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerMoveHandler.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Providers\ComponentProviders\AddToGameObjectComponentProviders\AddToNewGameObjectComponentProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinderWithParams.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceIdBinder\FactoryToChoiceIdBinder10.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\SignalExtensions.cs" />
@@ -258,8 +258,8 @@
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\ConcreteBinders\ConcreteBinderGeneric.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\SubContainerCreators\SubContainerCreatorBindInfo.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Misc\AudioHandler.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\TaskUpdater.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder0.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\TaskUpdater.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderSimple.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceIdBinder\FactoryToChoiceIdBinder2.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Util\CheatSheet.cs" />
@@ -287,8 +287,8 @@
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerHealthWatcher.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\IMemoryPool.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerDirectionHandler.cs" />
-     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Ship\States\ShipStateWaitingToStart.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Main\SignalDeclarationAsyncInitializer.cs" />
+     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Ship\States\ShipStateWaitingToStart.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\PoolableMemoryPool.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceBinder\FactoryToChoiceBinder0.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder1.cs" />
@@ -318,11 +318,11 @@
      <Compile Include="Assets\Plugins\Zenject\Source\Factories\KeyedFactory.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\DictionaryPool.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\FromBinders\FromBinderNonGeneric.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Providers\InstanceProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\ProviderUtil.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Providers\InstanceProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Misc\ControlsDisplay.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder3.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\ScriptableObjectResourceProvider.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder3.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Internal\Log.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\FromBinders\FromBinder.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Binding\Finalizers\NullBindingFinalizer.cs" />
@@ -334,8 +334,8 @@
      <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\SceneDecoratorContext.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\SubContainerDependencyProvider.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\BindSignal\BindSignalIdToBinder.cs" />
-     <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderUntyped.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Misc\LevelHelper.cs" />
+     <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderUntyped.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderWithContainer.cs" />
      <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\Kernel.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Misc\Explosion.cs" />

@@ -6,10 +6,10 @@ namespace Core.Camera
 {
 	public class CameraFollow : MonoBehaviour
 	{
-		[SerializeField]
+		[field: SerializeField]
 		private Vector3 offset;
 		
-		[SerializeField]
+		[field: SerializeField]
 		private float speed;
 		
 		[Inject]
@@ -17,13 +17,16 @@ namespace Core.Camera
 
 		private IPlayerBehaviour _playerBehaviour;
 
+		private void Awake()
+		{
+			_playerManager.PlayerSpawned += i => _playerBehaviour = i;
+		}
+
 		private void FixedUpdate()
 		{
-			if(_playerManager.Player.Value == null)
+			if (_playerBehaviour == null)
 				return;
-			
-			_playerBehaviour ??= _playerManager.Player.Value;
-			
+
 			var target = _playerBehaviour.GameObject.transform.position + offset;
 			
 			transform.position =

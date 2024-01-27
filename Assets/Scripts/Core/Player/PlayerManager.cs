@@ -1,7 +1,9 @@
+using System;
 using Core.Level;
 using UniRx;
-using UnityEngine;
+using Utils;
 using Zenject;
+using Object = UnityEngine.Object;
 
 namespace Core.Player
 {
@@ -13,19 +15,25 @@ namespace Core.Player
 		[Inject]
 		private ILevelManager _levelManager;
 
-		private readonly ReactiveProperty<IPlayerBehaviour> _player = new();
+		private readonly ReactiveProperty<IPlayerBehaviour> _playerInstance = new();
 		
-		public IReadOnlyReactiveProperty<IPlayerBehaviour> Player => _player;
+		public IReadOnlyReactiveProperty<IPlayerBehaviour> PlayerInstance => _playerInstance;
+		
+		public event Action<IPlayerBehaviour> PlayerSpawned;
+		public event Action PlayerDestroy;
 
 		public void SpawnPlayer()
 		{
-			_player.Value = _factory.Create();
+			_playerInstance.Value = ZenjectInstantiate.SpawnFromFactory(_factory);
+			PlayerSpawned?.Invoke(_playerInstance.Value);
 		}
 
 		public void DestroyPlayer()
 		{
-			Object.Destroy(_player.Value.GameObject);
-			_player.Value = null;
+			Object.Destroy(_playerInstance.Value.GameObject);
+			_playerInstance.Value = null;
+			
+			PlayerDestroy?.Invoke();
 		}
 
 		[Inject]

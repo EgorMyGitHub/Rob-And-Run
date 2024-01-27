@@ -1,30 +1,33 @@
 using System;
+using System.Linq;
+using Core.Path;
+using UnityEngine;
 
 namespace Core.Point
 {
-    public struct QueuePoint
+    public class QueuePath
     {
-        public QueuePoint(BasePoint basePoint)
+        public QueuePath(PatrolPath patrolPath)
         {
-            _points = basePoint.points;
+            _points = patrolPath.points.Select(i => i.position).ToArray();
         
-            currentIndex = -1;
+            _currentIndex = -1;
         }
     
-        private Point[] _points;
-        private int currentIndex;
+        private Vector3[] _points;
+        private int _currentIndex;
 
-        public Point Next()
+        public Vector3 Next()
         {
             if(_points.Length <= 0)
                 throw new Exception("Array of points is empty");
         
-            currentIndex++;
+            _currentIndex++;
         
-            if(currentIndex >= _points.Length)
-                currentIndex = 0;
+            if(_currentIndex >= _points.Length)
+                _currentIndex = 0;
         
-            return _points[currentIndex];
+            return _points[_currentIndex];
         }
     }
 }

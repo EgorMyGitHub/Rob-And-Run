@@ -46,48 +46,118 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Core\Item\ItemConfig.cs" />
+     <Compile Include="Assets\Scripts\Utils\SpawnInfo.cs" />
      <Compile Include="Assets\Scripts\Core\Point\QueuePoint.cs" />
      <Compile Include="Assets\Scripts\Core\TestLoad.cs" />
      <Compile Include="Assets\Scripts\Core\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Core\Level\ILevelManager.cs" />
      <Compile Include="Assets\Scripts\Installers\ProjectInstaller.cs" />
      <Compile Include="Assets\Scripts\UI\GUI\ScreenViewModel.cs" />
+     <Compile Include="Assets\Scripts\Utils\StateMachine.cs" />
+     <Compile Include="Assets\Scripts\Utils\StateContainer.cs" />
+     <Compile Include="Assets\Scripts\UI\GUI\IGuiService.cs" />
      <Compile Include="Assets\Scripts\Installers\WorldInstaller.cs" />
      <Compile Include="Assets\Scripts\UI\GUI\ScreenView.cs" />
+     <Compile Include="Assets\Scripts\UI\GUI\LayerData.cs" />
      <Compile Include="Assets\Scripts\UI\GUI\ScreenViewBase.cs" />
+     <Compile Include="Assets\Scripts\UI\Screens\HudScreen.cs" />
+     <Compile Include="Assets\Scripts\Core\Path\PathState.cs" />
+     <Compile Include="Assets\Scripts\UI\Config\GuiConfig.cs" />
      <Compile Include="Assets\Scripts\Core\Item\IItemManager.cs" />
-     <Compile Include="Assets\Scripts\Core\Point\Point.cs" />
+     <Compile Include="Assets\Scripts\Core\Escape\EscapeManager.cs" />
      <Compile Include="Assets\Scripts\Core\Player\IPlayerManager.cs" />
      <Compile Include="Assets\Scripts\Core\Police\IPoliceManager.cs" />
+     <Compile Include="Assets\Scripts\Core\Escape\IEscapeManager.cs" />
      <Compile Include="Assets\Scripts\Core\Level\LevelManager.cs" />
+     <Compile Include="Assets\Scripts\Core\GameController\GameManager.cs" />
      <Compile Include="Assets\Scripts\Core\Item\ItemManager.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\RendererViewZone.cs" />
+     <Compile Include="Assets\Scripts\UI\GUI\Layer\LayerHandler.cs" />
+     <Compile Include="Assets\Scripts\UI\GUI\GuiService.cs" />
      <Compile Include="Assets\Scripts\Core\Police\PoliceManager.cs" />
      <Compile Include="Assets\Scripts\Core\Police\PoliceBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\Player\IPlayer.cs" />
+     <Compile Include="Assets\Scripts\Core\Path\IPathManager.cs" />
+     <Compile Include="Assets\Scripts\Core\Path\PatrolPath.cs" />
+     <Compile Include="Assets\Scripts\Core\Path\PathManager.cs" />
+     <Compile Include="Assets\Scripts\UI\GUI\Layer\CommonLayerHandler.cs" />
+     <Compile Include="Assets\Scripts\Core\Escape\EscapeBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlayerBehaviour.cs" />
-     <Compile Include="Assets\Scripts\Core\Point\BasePoint.cs" />
+     <Compile Include="Assets\Scripts\UI\GUI\ScreenLayer.cs" />
      <Compile Include="Assets\Scripts\Utils\DisposableList.cs" />
+     <Compile Include="Assets\Scripts\UI\Installers\UIInstaller.cs" />
+     <Compile Include="Assets\Scripts\Utils\ZenjectInstantiate.cs" />
+     <Compile Include="Assets\Scripts\UI\ViewModel\HudViewModel.cs" />
      <Compile Include="Assets\Scripts\Core\Item\ItemBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\Level\Level.cs" />
      <Folder Include="Assets" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <Folder Include="Assets\Scripts\Core\Path" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets\TextMesh Pro\Sprites" />
      <Folder Include="Assets\Scripts\Installers" />
      <Folder Include="Assets\Scripts\Core\Police" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Sprite Assets" />
+     <Folder Include="Assets\AddressableAssetsData\AssetGroups\Schemas" />
      <Folder Include="Assets\Scenes" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <Folder Include="Assets\Prefabs\Screens" />
+     <Folder Include="Assets\AddressableAssetsData\AssetGroupTemplates" />
+     <Folder Include="Assets\Configs" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Fonts &amp; Materials" />
      <Folder Include="Assets\Scripts\Utils" />
+     <Folder Include="Assets\Scripts\UI\Installers" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <Folder Include="Assets\AddressableAssetsData" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <Folder Include="Assets\TextMesh Pro\Resources" />
      <Folder Include="Assets\Scripts\UI" />
+     <Folder Include="Assets\Scripts\Core\Escape" />
      <Folder Include="Assets\Scripts\Core" />
      <Folder Include="Assets\Prefabs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets\TextMesh Pro" />
+     <Folder Include="Assets\Scripts\UI\Screens" />
      <Folder Include="Assets\Scripts\Core\Point" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
      <Folder Include="Assets\Scripts\UI\GUI" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <Folder Include="Assets\TextMesh Pro\Shaders" />
+     <Folder Include="Assets\AddressableAssetsData\DataBuilders" />
+     <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
+     <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <Folder Include="Assets\Prefabs\Items" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+     <Folder Include="Assets\Scripts\UI\ViewModel" />
+     <Folder Include="Assets\Scripts\UI\GUI\Layer" />
      <Folder Include="Assets\Scripts\Core\Player" />
      <Folder Include="Assets\Resources" />
+     <Folder Include="Assets\Animation" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets\Prefabs\Levels\NavMesh" />
+     <Folder Include="Assets\Scripts\Core\GameController" />
+     <Folder Include="Assets\Prefabs\Levels" />
+     <Folder Include="Assets\Scripts\UI\Config" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
      <Folder Include="Assets\Scripts\Core\Level" />
+     <Folder Include="Assets\AddressableAssetsData\AssetGroups" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
      <Folder Include="Assets\Scripts\Core\Camera" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <Folder Include="Assets\Scripts" />
+     <Folder Include="Assets\TextMesh Pro\Documentation" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
      <Folder Include="Assets\Scripts\Core\Item" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
      <Folder Include="Assets\Material" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>F:\Unity\Installition\2022.3.15f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -742,11 +812,17 @@
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.ResourceManager">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.ScriptableBuildPipeline">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -793,6 +869,9 @@
      <Reference Include="Unity.AI.Navigation.Updater">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Addressables.Editor">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
@@ -811,8 +890,14 @@
      <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Addressables">
+     <HintPath>C:\ActiveUnityProject\Rob-And-Run\Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

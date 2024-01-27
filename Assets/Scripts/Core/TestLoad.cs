@@ -6,7 +6,7 @@ namespace Core
 {
     public class TestLoad : MonoBehaviour
     {
-        [SerializeField]
+        [field: SerializeField]
         private Level.Level test;
     
         [Inject]

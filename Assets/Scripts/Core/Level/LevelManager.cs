@@ -1,7 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
-using Zenject;
+using Utils;
 using Object = UnityEngine.Object;
 
 namespace Core.Level
@@ -10,9 +10,6 @@ namespace Core.Level
 	{
 		public event Action Loaded;
 		public event Action OnDestroyLevel;
-		
-		[Inject] 
-		private DiContainer _diContainer;
 		
 		private Level _currentLevel;
 
@@ -30,7 +27,7 @@ namespace Core.Level
 
 			await UniTask.WaitWhile(() => !scene.isDone);
 
-			_currentLevel = _diContainer.InstantiatePrefabForComponent<Level>(level);
+			_currentLevel = ZenjectInstantiate.InstantiatePrefabForComponent(level);
 			_currentLevel.Load();
 
 			Loaded?.Invoke();

@@ -1,15 +1,19 @@
-﻿using UnityEngine;
+﻿using UniRx;
+using UnityEngine;
 
 namespace Core.Item
 {
     public interface IItemManager
     {
-        public void RegisterSpawn(
+        IReadOnlyReactiveProperty<int> CollectedItems { get; }
+        IReadOnlyReactiveProperty<int> AllItems { get; }
+        
+        void RegisterSpawn(
             Vector3 position,
             Quaternion quaternion,
-            ItemConfig config,
+            ItemBehaviour item,
             Transform parent);
         
-        public void RegisterCollect(ItemBehaviour item);
+        void RegisterCollect(ItemBehaviour item);
     }
 }

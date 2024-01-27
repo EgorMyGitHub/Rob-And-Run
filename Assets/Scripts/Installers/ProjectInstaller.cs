@@ -11,7 +11,8 @@ namespace Installers
                 .Bind<ILevelManager>()
                 .To<LevelManager>()
                 .FromNew()
-                .AsSingle();
+                .AsSingle()
+                .NonLazy();
         }
     }
 }

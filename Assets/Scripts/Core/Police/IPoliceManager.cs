@@ -1,9 +1,9 @@
-﻿using Core.Point;
+﻿using Core.Path;
 
 namespace Core.Police
 {
     public interface IPoliceManager
     {
-        void SpawnPolice(BasePoint point);
+        void SpawnPolice(PatrolPath path);
     }
 }

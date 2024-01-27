@@ -7,7 +7,7 @@ namespace UI.GUI
 	{
 		protected TViewModel ViewModel;
 
-		protected DisposableList DisposableList;
+		protected DisposableList DisposableList = new();
 
 		public override void Initialize(ScreenViewModel model)
 		{
@@ -19,6 +19,7 @@ namespace UI.GUI
 		public override void Hide()
 		{
 			DisposableList.Dispose();
+			ViewModel.Dispose();
 		}
 	}
 }

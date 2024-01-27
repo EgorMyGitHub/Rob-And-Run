@@ -5,10 +5,10 @@ namespace Core.Player
 {
 	public class PlayerBehaviour : MonoBehaviour, IPlayerBehaviour
 	{
-		[SerializeField] 
+		[field: SerializeField] 
 		private float speed;
     
-		[SerializeField] [HideInInspector] 
+		[field: SerializeField] [HideInInspector] 
 		private Rigidbody rigidbody;
 
 		public GameObject GameObject => gameObject;

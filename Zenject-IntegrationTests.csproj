@@ -92,8 +92,8 @@
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Misc\TestZenAutoInjecter\Bar.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestFromSubContainerPrefabResource\Gorp.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestInstantiateCallback\Foo.cs" />
-     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestFromPrefabResource\Jim.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestFromGameObjectInstaller\Bar.cs" />
+     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestFromPrefabResource\Jim.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\SceneTests\TestDestructionOrder\FooDisposable1.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestFromPrefabInstaller\Bar.cs" />
      <Compile Include="Assets\Plugins\Zenject\OptionalExtras\IntegrationTests\Bindings\TestFromPrefabResource\Bob.cs" />

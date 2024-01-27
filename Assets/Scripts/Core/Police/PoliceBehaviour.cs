@@ -1,48 +1,88 @@
-using Core.Point;
+using System;
+using Core.Path;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
+using Utils;
 using Zenject;
 
 namespace Core.Police
 {
     public class PoliceBehaviour : MonoBehaviour
     {
-        [SerializeField, HideInInspector]
+        [field: SerializeField, HideInInspector]
+        private Animator animator;
+        
+        [field: SerializeField, HideInInspector]
         private NavMeshAgent navMeshAgent;
         
-        [SerializeField, HideInInspector]
-        private RendererViewZone viewZone;
-
-        private QueuePoint _queuePoint;
+        [field: SerializeField, HideInInspector]
+        public RendererViewZone ViewZone{ get; private set; }
         
-        private Point.Point _targetPoint;
+        private StateItem<PatrolState> _stateItem;
+        
+        [Inject]
+        private IPathManager _pathManager;
+        
+        public Vector3 TargetPoint { get; set; }
 
+        [field: NonSerialized]
+        public bool IsRenderZone;
+
+        public float Distance => navMeshAgent.remainingDistance;
+        
         private void OnValidate()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
-            viewZone = GetComponentInChildren<RendererViewZone>();
+            animator = GetComponent<Animator>();
+            ViewZone = GetComponentInChildren<RendererViewZone>();
         }
 
         private void FixedUpdate()
         {
-            Movement();
-            viewZone.UpdateViewZone();
-        }
-
-        private void Movement()
-        {
-            if(Vector3.Distance(transform.position, _targetPoint.transform.position) < 0.1f)
-                _targetPoint = _queuePoint.Next();
+            if(IsRenderZone)
+                ViewZone.UpdateViewZone();
             
-            navMeshAgent.destination = _targetPoint.transform.position;
+            _pathManager.UpdatePath(this);
+                
+            SetDestination();
         }
 
-        public void InitializePoints(QueuePoint queuePoint)
+        private async void OnUpdateState(PatrolState newState)
         {
-            _queuePoint = queuePoint;
-            _targetPoint = _queuePoint.Next();
+            if(newState == PatrolState.LookAround)
+                LookAround();
         }
 
+        private void SetDestination() =>
+            navMeshAgent.destination = TargetPoint;
+        
+        public async UniTask LookAround()
+        {
+            animator.SetBool("LookAround", true);
+            
+            _stateItem.CancelState.Token.Register(() =>
+            {
+                var rotate = transform.rotation;
+                animator.SetBool("LookAround", false);
+                SetDestination();
+                transform.rotation = rotate;
+            });
+            
+            await UniTask.WaitForSeconds(1.5f, cancellationToken: _stateItem.CancelState.Token);
+            
+            if(_stateItem.State == PatrolState.LookAround)
+                _stateItem.UpdateState(PatrolState.Patrol);
+            
+            animator.SetBool("LookAround", false);
+        }
+
+        public void Initialize(StateItem<PatrolState> state)
+        {
+            _stateItem = state;
+            _stateItem.Callback.Add(OnUpdateState);
+        }
+        
         public class PolicePool : MonoMemoryPool<PoliceBehaviour>
         { }
     }

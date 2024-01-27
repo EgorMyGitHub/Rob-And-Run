@@ -5,30 +5,30 @@ using UnityEngine;
 
 public class RendererViewZone : MonoBehaviour
 { 
-    [SerializeField]
+    [field: SerializeField]
     private LayerMask visionObstructingLayer;
     
-    [SerializeField] 
+    [field: SerializeField] 
     private Material visionConeMaterial;
     
-    [SerializeField] 
+    [field: SerializeField] 
     private float visionRange;
     
-    [SerializeField] 
+    [field: SerializeField] 
     private float visionAngle;
     
-    [SerializeField] 
-    private int VisionConeResolution = 120;
+    [field: SerializeField] 
+    private int visionConeResolution = 120;
     
-    private Mesh VisionConeMesh;
+    private Mesh _visionConeMesh;
 
-    [SerializeField, HideInInspector]
+    [field: SerializeField, HideInInspector]
     private MeshRenderer meshRenderer;
     
-    [SerializeField, HideInInspector]
+    [field: SerializeField, HideInInspector]
     private MeshFilter meshFilter;
         
-    [SerializeField, HideInInspector]
+    [field: SerializeField, HideInInspector]
     private float visionAngleInRad;
     
     private CancellationTokenSource _playerInView = null;
@@ -46,29 +46,29 @@ public class RendererViewZone : MonoBehaviour
 
     void Awake()
     {
-        VisionConeMesh = new();
+        _visionConeMesh = new();
     }
 
     public void UpdateViewZone()
     {
-        int[] triangles = new int[(VisionConeResolution - 1) * 3];
-        Vector3[] Vertices = new Vector3[VisionConeResolution + 1];
-        Vertices[0] = Vector3.zero;
-        float Currentangle = -visionAngleInRad / 2;
-        float angleIcrement = visionAngleInRad / (VisionConeResolution - 1);
-        float Sine;
-        float Cosine;
+        int[] triangles = new int[(visionConeResolution - 1) * 3];
+        Vector3[] vertices = new Vector3[visionConeResolution + 1];
+        vertices[0] = Vector3.zero;
+        float currentangle = -visionAngleInRad / 2;
+        float angleIcrement = visionAngleInRad / (visionConeResolution - 1);
+        float sine;
+        float cosine;
         bool isViewPlayer = false;
         
-        for (int i = 0; i < VisionConeResolution; i++)
+        for (int i = 0; i < visionConeResolution; i++)
         {
-            Sine = Mathf.Sin(Currentangle);
-            Cosine = Mathf.Cos(Currentangle);
-            Vector3 RaycastDirection = (transform.forward * Cosine) + (transform.right * Sine);
-            Vector3 VertForward = (Vector3.forward * Cosine) + (Vector3.right * Sine);
-            Vertices[i + 1] = VertForward * visionRange;
-            
-            var hits = Physics.RaycastAll(transform.position, RaycastDirection, visionRange, visionObstructingLayer);
+            sine = Mathf.Sin(currentangle);
+            cosine = Mathf.Cos(currentangle);
+            Vector3 raycastDirection = (transform.forward * cosine) + (transform.right * sine);
+            Vector3 vertForward = (Vector3.forward * cosine) + (Vector3.right * sine);
+            vertices[i + 1] = vertForward * visionRange;
+
+            var hits = Physics.RaycastAll(transform.position, raycastDirection, visionRange, visionObstructingLayer);
             var around = GetAroundHits(hits, out var result);
             
             if (around && result.collider.TryGetComponent<PlayerBehaviour>(out var player))
@@ -77,11 +77,11 @@ public class RendererViewZone : MonoBehaviour
                 isViewPlayer = true; 
             }
             if(hits.Length != 0)
-                Vertices[i + 1] = VertForward * result.distance;
+                vertices[i + 1] = vertForward * result.distance;
             else
-                Vertices[i + 1] = VertForward * visionRange;
+                vertices[i + 1] = vertForward * visionRange;
             
-            Currentangle += angleIcrement;
+            currentangle += angleIcrement;
         }
         for (int i = 0, j = 0; i < triangles.Length; i += 3, j++)
         {
@@ -96,16 +96,14 @@ public class RendererViewZone : MonoBehaviour
             _playerInView = null;
         }
 
-        VisionConeMesh.Clear();
-        VisionConeMesh.vertices = Vertices;
-        VisionConeMesh.triangles = triangles;
-        meshFilter.mesh = VisionConeMesh;
+        _visionConeMesh.Clear();
+        _visionConeMesh.vertices = vertices;
+        _visionConeMesh.triangles = triangles;
+        meshFilter.mesh = _visionConeMesh;
     }
 
     private void DetectPlayer(PlayerBehaviour player)
     {
-        Debug.LogError("Player View");
-        
         if(_playerInView != null)
             return;
         
