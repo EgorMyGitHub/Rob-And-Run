@@ -18,8 +18,6 @@ namespace Core.Escape
         }
 
         public class EscapeFactory : PlaceholderFactory<EscapeBehaviour>
-        {
-            
-        }
+        { }
     }
 }

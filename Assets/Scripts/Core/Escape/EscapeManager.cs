@@ -14,7 +14,7 @@ namespace Core.Escape
 
         public void RegisterSpawnEscape(Transform transform)
         {
-            var escape = ZenjectInstantiate.SpawnFromFactory(_escapePool, new SpawnInfo(transform.position, transform));
+            ZenjectInstantiate.SpawnFromFactory(_escapePool, new SpawnInfo(transform.position, transform));
         }
 
         public void RegisterEscape()

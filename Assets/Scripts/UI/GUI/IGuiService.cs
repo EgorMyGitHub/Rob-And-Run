@@ -5,7 +5,8 @@ namespace UI.GUI
 {
     public enum ScreenType
     {
-        Hud
+        Hud,
+        Score
     }
 
     public enum GuiLayer

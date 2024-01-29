@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Core.Level;
 using UnityEngine;
 using Zenject;
@@ -8,13 +9,19 @@ namespace Core
     {
         [field: SerializeField]
         private Level.Level test;
+        
+        [field: SerializeField]
+        private List<Level.Level> allLevels;
     
         [Inject]
         private ILevelManager _manager;
 
         private void Start()
         {
-            _manager.LoadLevelAsync(test, false);
+            var index = allLevels.IndexOf(test);
+            var nextLevels = allLevels.GetRange(index, allLevels.Count - index).GetEnumerator();
+            
+            _manager.LoadLevelAsync(test, nextLevels, false);
         }
     }
 }

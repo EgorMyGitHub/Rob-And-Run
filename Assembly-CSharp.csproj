@@ -85,11 +85,13 @@
      <Compile Include="Assets\Scripts\Core\Escape\EscapeBehaviour.cs" />
      <Compile Include="Assets\Scripts\Core\Player\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\UI\GUI\ScreenLayer.cs" />
+     <Compile Include="Assets\Scripts\UI\ViewModel\ScoreViewModel.cs" />
      <Compile Include="Assets\Scripts\Utils\DisposableList.cs" />
      <Compile Include="Assets\Scripts\UI\Installers\UIInstaller.cs" />
      <Compile Include="Assets\Scripts\Utils\ZenjectInstantiate.cs" />
      <Compile Include="Assets\Scripts\UI\ViewModel\HudViewModel.cs" />
      <Compile Include="Assets\Scripts\Core\Item\ItemBehaviour.cs" />
+     <Compile Include="Assets\Scripts\UI\Screens\ScoreScreen.cs" />
      <Compile Include="Assets\Scripts\Core\Level\Level.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -119,6 +121,7 @@
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <Folder Include="Assets\TextMesh Pro" />
      <Folder Include="Assets\Scripts\UI\Screens" />
+     <Folder Include="Assets\Prefabs\ScreensLayer" />
      <Folder Include="Assets\Scripts\Core\Point" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />

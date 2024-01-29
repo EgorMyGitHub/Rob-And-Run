@@ -35,7 +35,6 @@ namespace Core.GameController
         
         private void GameOver()
         {
-            
         }
     }
 }
